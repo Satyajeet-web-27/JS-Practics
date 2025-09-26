@@ -17,7 +17,7 @@ function TodoForm() {
         <input
           type="text"
           placeholder="Write Todo..."
-          className="flex-1 border p-2 outline-none"
+          className="flex-1 border p-2 outline-none dark:text-white"
           value={todo}
           onChange={(e) => {
             setTodo(e.currentTarget.value);

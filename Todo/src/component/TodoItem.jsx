@@ -19,7 +19,7 @@ function TodoItem({ todo }) {
 
   return (
     <div
-      className={`flex w-full gap-2 items-center border border-gray-300 p-2 ${
+      className={`flex mb-3 w-full gap-2 items-center border border-gray-300 p-2 ${
         todo.complete ? "bg-green-200" : ""
       }`}
     >
@@ -31,7 +31,7 @@ function TodoItem({ todo }) {
         id="toggle"
       />
       <input
-        className={`flex-1 outline-none border-b-2 border-gray-300 focus:border-blue-500 ${
+        className={`flex-1 dark:text-white outline-none border-b-2 border-gray-300 focus:border-blue-500 ${
           todo.complete ? "line-through" : ""
         }`}
         type="text"
