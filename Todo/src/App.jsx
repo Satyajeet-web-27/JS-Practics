@@ -66,12 +66,12 @@ function App() {
         darkTheme,
       }}
     >
-      <div className="bg-gray-100 dark:bg-gray-900 h-screen flex flex-col items-center justify-center gap-2">
-        <div className="bg-gray-300 relative dark:bg-gray-600 flex flex-col justify-center items-center p-4 rounded w-1/3">
+      <div className="bg-gray-100 dark:bg-gray-900 h-screen flex flex-col items-center justify-center gap-2 transition-all duration-300 ease-in">
+        <div className="bg-gray-300 relative dark:bg-gray-600 flex flex-col justify-center items-center p-4 rounded w-1/3 transition-all duration-300 ease-in">
           <span className="absolute top-3 right-3">
             <ThemeBtn />
           </span>
-          <h1 className="text-3xl mb-4 font-bold dark:text-green-500">
+          <h1 className="text-3xl mb-4 font-bold dark:text-green-500 transition-all duration-300 ease-in">
             Todo App
           </h1>
           <h2 className="dark:text-white">Task : {todos.length}</h2>
