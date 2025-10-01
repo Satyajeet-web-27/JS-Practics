@@ -6,13 +6,15 @@ export class AuthService {
   account;
 
   constructor() {
-    this.client.setProject(conf.appwriteProjectId);
+    this.client
+      .setProject(conf.appwriteProjectId)
+      .setEndpoint(conf.appwriteUrl);
     this.account = new Account(this.client);
   }
 
   async createUser({ email, password, name }) {
     try {
-      const userAccount = await this.client.create(
+      const userAccount = await this.account.create(
         ID.unique(),
         email,
         password,
@@ -30,7 +32,7 @@ export class AuthService {
 
   async login({ email, password }) {
     try {
-      return await this.client.createEmailPasswordSession(email, password);
+      return await this.account.createEmailPasswordSession(email, password);
     } catch (error) {
       throw error;
     }
