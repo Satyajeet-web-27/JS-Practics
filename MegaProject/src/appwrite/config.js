@@ -14,7 +14,7 @@ export class Service {
     this.database.TablesDB(this.client);
   }
 
-  async createPost({ title, slug, content, featuredImage, status, userId }) {
+  async createPost({ title, rowId, content, featuredImage, status, userId }) {
     try {
       return await this.database.createRow({
         databseId: conf.appwriteDatabaseId,
@@ -30,6 +30,25 @@ export class Service {
       });
     } catch (err) {
       console.log("Appwrite service :: createPost :: error", err);
+    }
+  }
+
+  async updatePost() {
+    try {
+      return await this.database.updateRow(
+        conf.appwriteDatabaseId,
+        conf.appwriteCollectionId,
+        rowId,
+        {
+          title,
+          content,
+          featuredImage,
+          status,
+          userId,
+        }
+      );
+    } catch (err) {
+      console.log("Appwrite service :: updatePost :: error", err);
     }
   }
 }
